@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Defense - Team Tower Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Wave Defense</h1>
+        <p class="subtitle">Manage your team to defend against incoming waves!</p>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+            
+            <div class="sidebar">
+                <div class="stats-panel">
+                    <h2>Team Stats</h2>
+                    <div class="stat">
+                        <span>HP:</span>
+                        <span id="healthDisplay">100</span>
+                    </div>
+                    <div class="stat">
+                        <span>Gold:</span>
+                        <span id="goldDisplay">100</span>
+                    </div>
+                    <div class="stat">
+                        <span>Wave:</span>
+                        <span id="waveDisplay">1 / 230</span>
+                    </div>
+                    <div class="stat">
+                        <span>Score:</span>
+                        <span id="scoreDisplay">0</span>
+                    </div>
+                </div>
+                
+                <div class="units-panel">
+                    <h2>Recruit Units</h2>
+                    <button class="unit-btn" data-unit="archer" data-cost="50">
+                        🏹 Archer<br><small>Cost: 50</small>
+                    </button>
+                    <button class="unit-btn" data-unit="knight" data-cost="80">
+                        ⚔️ Knight<br><small>Cost: 80</small>
+                    </button>
+                    <button class="unit-btn" data-unit="wizard" data-cost="120">
+                        🧙 Wizard<br><small>Cost: 120</small>
+                    </button>
+                    <button class="unit-btn" data-unit="sniper" data-cost="100">
+                        🎯 Sniper<br><small>Cost: 100</small>
+                    </button>
+                    <button class="unit-btn legendary" data-unit="rainbow-sniper" data-cost="250">
+                        🌈🎯 Rainbow Sniper<br><small>Cost: 250</small>
+                    </button>
+                </div>
+                
+                <div class="wave-panel">
+                    <button id="nextWaveBtn" class="next-wave-btn">Next Wave →</button>
+                    <p id="waveStatus">Ready for wave 1</p>
+                </div>
+                
+                <div class="info-panel">
+                    <h3>Controls</h3>
+                    <p>Click canvas to place units</p>
+                    <p>Press unit button then click</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
