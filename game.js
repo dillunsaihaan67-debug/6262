@@ -396,12 +396,12 @@ function update() {
     });
 
     // Check if wave is complete
-    if (gameState.isWaveActive && enemies.length === 0 && gameState.wave > 1) {
+    if (gameState.isWaveActive && enemies.length === 0) {
         gameState.isWaveActive = false;
         if (gameState.wave >= gameState.maxWave) {
             document.getElementById('waveStatus').textContent = '🎉 YOU WON! Max wave reached!';
         } else {
-            document.getElementById('waveStatus').textContent = 'Wave complete! Next wave ready';
+            document.getElementById('waveStatus').textContent = 'Wave complete! Click Next Wave →';
         }
     }
 
@@ -513,7 +513,7 @@ document.getElementById('nextWaveBtn').addEventListener('click', () => {
     if (!gameState.isWaveActive && gameState.wave < gameState.maxWave) {
         gameState.isWaveActive = true;
         gameState.wave++;
-        document.getElementById('waveStatus').textContent = 'Wave in progress...';
+        document.getElementById('waveStatus').textContent = 'Wave ' + gameState.wave + ' in progress...';
         spawnWave(gameState.wave);
         updateDisplay();
     } else if (gameState.wave >= gameState.maxWave && !gameState.isWaveActive) {
@@ -546,6 +546,4 @@ function gameOver() {
 
 // Start game
 updateDisplay();
-spawnWave(1);
-gameState.isWaveActive = true;
 gameLoop();
